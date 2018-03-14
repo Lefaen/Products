@@ -35,7 +35,7 @@
                 echo '<li>';
                 if(file_exists('images/middle_'. $row['image']))
                 {
-                    echo '<div>' . '<img src="/images/middle_'. $row['image'] .'" alt="" class="Photo" onclick="sizeImage(this)" />' . '</div>';
+                    echo '<div>' . '<img src="/images/middle_'. $row['image'] .'" alt="'. $row['name'] .'" />' . '</div>';
                 }
                 else
                 {

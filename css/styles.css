@@ -34,12 +34,14 @@ body {
 }
 
 .errorPhoto {
-    padding-bottom: 91%;
+    padding-bottom: 91.5%;
     position: relative;
 }
 .products li .errorPhoto div{
     position: absolute;
     margin: 0px;
+    width: 60%;
+    height: 20%;
     padding: 40% 20% 40% 20%;
     background-color: #ececec;
     text-align: center;
