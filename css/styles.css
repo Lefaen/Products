@@ -1,0 +1,136 @@
+/* todo: Для стилизации используйте этот файл или создайте необходимые в этой папке */
+body {
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.products {
+    padding: 0;
+    margin: 0;
+}
+.products li {
+    display: block;
+    background-color: #fff;
+    float: left;
+    width: 20%;
+    outline: 1px solid #9a9a9a;
+}
+
+.products li div{
+    margin: 5%;
+}
+
+.products li div img {
+    width: 100%;
+    margin: 0px;
+}
+
+/*fixed name product*/
+.products li div:nth-child(2){
+    height: 60px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.errorPhoto {
+    padding-bottom: 91%;
+    position: relative;
+}
+.products li .errorPhoto div{
+    position: absolute;
+    margin: 0px;
+    padding: 40% 20% 40% 20%;
+    background-color: #ececec;
+    text-align: center;
+}
+
+
+/*------------------------*/
+/*media queries for screen*/
+/*------------------------*/
+@media only screen and (min-width: 1200px) {
+    .products li:nth-child(5n+1) {
+        clear: left;
+    }
+}
+@media only screen and (min-width: 960px) and (max-width: 1200px) {
+	.products li{
+        width: 25%;
+	}
+    .products li:nth-child(4n+1) {
+        clear: left;
+    }
+}
+@media only screen and (min-width: 720px) and (max-width: 960px) {
+	.products li{
+        width: 33%;
+	}
+    .products li:nth-child(3n+1) {
+        clear: left;
+    }
+}
+@media only screen and (min-width: 360px) and (max-width: 720px) {
+	.products li{
+        width: 50%;
+	}
+    .products li:nth-child(2n+1) {
+        clear: left;
+    }
+}
+@media only screen and (max-width: 360px) {
+	.products li{
+        width: 240px;
+	}
+
+    .products li:nth-child(n+1) {
+        clear: left;
+    }
+}
+
+
+/*------------------------*/
+/*navigation--------------*/
+/*------------------------*/
+.Nav {
+    text-align: center;
+    margin: 50px 30% 1px 30%;
+    padding: 10px 0 0 0; 
+    width: 40%;
+    outline: 1px solid #9a9a9a;
+}
+
+.Nav div{
+    display: inline-block;
+    background-color: #edefeb;
+    outline: 1px solid #9a9a9a;
+    text-align: center;
+    font-size: 16pt;
+    width: 30px;
+    
+}
+
+.Nav p{
+    font-weight: 600;
+    font-size: 15pt;
+    margin: 0 0 10px 0;
+}
+
+.Nav a{
+    color: Black;
+    text-decoration: none;
+    margin: 0px;
+}
+
+
+.Nav div:hover{
+    background-color: #832b5b;
+    color: #fff;
+    text-decoration: none;
+}
+
+#active div{
+    background-color: #832b5b;
+    color: #fff;
+    text-decoration: none;
+}

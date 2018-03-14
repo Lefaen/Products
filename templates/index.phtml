@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <title>Тестовое задание DIOL</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+    <!-- todo: добавьте логику отображения сюда -->
+    <!-- todo: приятный вид приветствуется -->
+    
+    <div class="Nav">
+        <p>Страницы:</p>
+            <?php
+                for($i = 1; $i<=$pages; $i++)
+                {
+                    if($_GET['page'] == $i)
+                    {
+                        echo '<a id ="active" href ="/?page='.$i.'"><div>' .$i. ' </div></a>';
+                    }
+                    else
+                    {
+                        echo '<a href ="/?page='.$i.'"><div>' .$i. ' </div></a>';
+                    }
+                }
+            ?>
+    </div>
+    <ul class="products">
+        <?php
+            foreach($dataPage as $row) 
+            {
+                $brand = $pdo->query('SELECT name FROM brands WHERE id='.$row['brand_id']);
+                $brand = $brand->fetch();
+                
+                echo '<li>';
+                if(file_exists('images/middle_'. $row['image']))
+                {
+                    echo '<div>' . '<img src="/images/middle_'. $row['image'] .'" alt="" class="Photo" onclick="sizeImage(this)" />' . '</div>';
+                }
+                else
+                {
+                    echo '<div class="errorPhoto">' . '<div>Ошибка загрузки изображения</div>' . '</div>';
+                } 
+                echo '<div>' . $row['name'] . '</div>';
+                echo '<div>' . 'Цена: ' .$row['price'] . ' руб.' . '</div>';
+                echo '<div>' . 'Наличие: ' . ($row['existence'] == 1 ? 'Есть' : 'Нет') . '</div>';
+                echo '<div>' . 'Бренд: ' . $brand['name'] . '</div>';
+                echo '</li>';
+            }
+        ?>
+    </ul>
+    <script type="text/javascript" src="./js/app.js"></script>
+</body>
+</html>
